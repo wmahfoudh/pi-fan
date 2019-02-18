@@ -8,8 +8,8 @@ Turn on Raspberry Pi 3 fan when CPU temperature reaches a certain level
 - If you have a small fan like those integrated with some cases (200 mA) the diode can be omitted
 - Any valid GPIO pin can do
 
-To run th escript with each boot, edit the ``/etc/rc.local`` and add the following line
+To run the script at startup, and supposing it is saved in the ``/home/pi`` folder, edit the ``/etc/rc.local`` and add the following line
 ````bash
-python /home/pi/pi-fan.py &
+/home/pi/pi-fan.py &
 ````
 Ensure the last line of the file is ``exit 0``
