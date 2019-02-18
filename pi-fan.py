@@ -6,7 +6,7 @@ import signal
 import sys
 import RPi.GPIO as GPIO
 
-ConnectedPin = 23
+ConnectedPin = 21
 fanOnTemperature = 55
 fanOffTemperature = 45
 
