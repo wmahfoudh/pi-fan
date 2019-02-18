@@ -33,6 +33,7 @@ try:
     setup() 
     while True:
         FanControl()
+        print(measureCPUTemperature())
         sleep(5)
 except KeyboardInterrupt:
     GPIO.cleanup()
