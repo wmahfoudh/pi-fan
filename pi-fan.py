@@ -6,8 +6,9 @@ import signal
 import sys
 import RPi.GPIO as GPIO
 
-ConnectedPin = 21
-maxTemperature = 35
+ConnectedPin = 23
+fanOnTemperature = 55
+fanOffTemperature = 45
 
 def setup():
     GPIO.setmode(GPIO.BCM)
@@ -22,9 +23,9 @@ def measureCPUTemperature():
 
 def FanControl():
     CPUTemperature = float(measureCPUTemperature())
-    if CPUTemperature > maxTemperature:
+    if CPUTemperature > fanOnTemperature:
         GPIO.output(ConnectedPin, True)
-    else:
+    elif CPUTemperature < fanOffTemperature:
         GPIO.output(ConnectedPin, False)
     return()
 
