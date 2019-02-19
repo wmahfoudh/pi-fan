@@ -17,4 +17,5 @@ To run the script at startup, and supposing it is saved in the ``/home/pi`` fold
 ````bash
 /home/pi/pi-fan.py &
 ````
-Ensure the last line of the file is ``exit 0``
+- It is not necessary to add ``sudo`` to the command as the ``rc.local`` is run by the ``root`` user
+- Ensure the last line of the file is ``exit 0``
