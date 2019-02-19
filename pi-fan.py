@@ -10,12 +10,6 @@ ConnectedPin = 21
 fanOnTemperature = 55
 fanOffTemperature = 45
 
-def setup():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(ConnectedPin, GPIO.OUT)
-    GPIO.setwarnings(False)
-    return()
-
 def measureCPUTemperature():
     raw_reading = os.popen('vcgencmd measure_temp').readline()
     temperature =(raw_reading.replace('temp=','').replace("\'C\n",""))
@@ -30,7 +24,9 @@ def FanControl():
     return()
 
 try:
-    setup() 
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(ConnectedPin, GPIO.OUT)
+    GPIO.setwarnings(False)
     while True:
         FanControl()
         print(measureCPUTemperature())
