@@ -7,7 +7,7 @@ import sys
 import RPi.GPIO as GPIO
 
 ConnectedPin = 21
-fanOnTemperature = 55
+fanOnTemperature = 60
 fanOffTemperature = 45
 
 def measureCPUTemperature():
@@ -29,7 +29,7 @@ try:
     GPIO.setwarnings(False)
     while True:
         FanControl()
-        print(measureCPUTemperature())
+        #print(measureCPUTemperature())
         sleep(5)
 except KeyboardInterrupt:
     GPIO.cleanup()
