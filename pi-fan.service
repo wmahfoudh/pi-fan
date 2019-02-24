@@ -1,0 +1,11 @@
+[Unit]
+Description=pi-fan
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/pi/progs/pi-fan.py
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
