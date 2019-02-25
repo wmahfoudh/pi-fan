@@ -13,16 +13,18 @@ Turn on Raspberry Pi 3 fan when CPU temperature reaches a certain level
 - Values of 60 degrees for ``fanOnTemperature`` and 45 for ``fanOnffTemperature`` showed during tests good compromize between cooling and intermittent on/off of the fan
 - Tests were carried out with a small 200 mA fan that comes with the case
 
-## Run at startup (method 1)
-Supposing the script is saved in the ``/home/pi/progs/`` folder, edit the ``/etc/rc.local`` and add the following line
+# Run at startup
+Supposing the script is saved in the ``/home/pi/progs/`` folder:
+## */etc/rc.local* method
+Edit the ``/etc/rc.local`` script and add the following line:
 ````bash
 /home/pi/progs/pi-fan.py &
 ````
 - It is not necessary to add ``sudo`` to the command as the ``rc.local`` is run by the ``root`` user
-- Ensure the last line of the file is ``exit 0``
+- Ensure the last line of the script is ``exit 0``
 
-## Run at startup (method 2, as a service)
-Create a service file by entering ``sudo nano /etc/systemd/system/pi-fan.service``. The file should contain:
+## *as a service* (preferred)
+Create a service file: ``sudo nano /etc/systemd/system/pi-fan.service`` and paste the following:
 ````bash
 [Unit]
 Description=pi-fan
