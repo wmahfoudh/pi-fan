@@ -37,4 +37,4 @@ User=pi
 [Install]
 WantedBy=multi-user.target
 ````
-Enable the service at startup with ``sudo systemctl enable pi-fan.service``
+Enable the service at startup with ``sudo systemctl enable pi-fan.service`` and reboot (or start it manually)
