@@ -12,6 +12,8 @@ Turn on Raspberry Pi 3 fan when CPU temperature reaches a certain level
 - The program will tun on the fan when CPU temperature reaches ``fanOnTemperature``, the fan will turn off only when the temperature goes below ``fanOffTemperature``
 - Values of 60 degrees for ``fanOnTemperature`` and 45 for ``fanOnffTemperature`` showed during tests good compromize between cooling and between intermittent on/off of the fan, adjust them as per your *taste*
 
+![pinout](./rpi-pinout.png)
+
 # Allow the script to run at startup
 Supposing the script is saved in the ``/home/pi/progs/`` folder:
 ## */etc/rc.local* method
